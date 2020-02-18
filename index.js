@@ -1,3 +1,5 @@
 var documentor=require("./file_reader.js");
-var filepath="collection.json";
-documentor(filepath);
+module.exports=function documentor(filepath) 
+{
+	documentor(filepath);
+};

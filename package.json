@@ -17,6 +17,11 @@
   "author": "Prabhjot Singh",
   "license": "ISC",
   "dependencies": {
-    "html-pdf": "^2.2.0"
+    "html-pdf": "^2.2.0",
+    "readme-md-generator": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prab409069/Postman-Documentor.git"
   }
 }
