@@ -1,0 +1,22 @@
+{
+  "name": "postman-documentor",
+  "version": "1.0.0",
+  "description": "A package that converts Postman API collection v2.1 into a proper documentated PDF file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "postman",
+    "documentation",
+    "postman",
+    "request",
+    "postwoman",
+    "postman to pdf"
+  ],
+  "author": "Prabhjot Singh",
+  "license": "ISC",
+  "dependencies": {
+    "html-pdf": "^2.2.0"
+  }
+}

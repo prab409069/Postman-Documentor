@@ -1,0 +1,2100 @@
+{
+	"info": {
+		"_postman_id": "86370874-44dd-4910-bf00-47223b3b701a",
+		"name": "Api.kivihealth.com",
+		"description": "This API collection will be used to perform fast CRUD operations for Doctor/Clinic/Patient bundles.\nIt helps in reducing the waiting time for response as it is based on Node JS non-blocking operations.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "api/doctorapi/authenticate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"email\":\"maulin.shah@kivitech.in\",\n   \"password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"authenticate"
+							]
+						},
+						"description": "This API is used to login into the account of a doctor, it will return an access_token which must be bind to every future requests."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/profile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgwNDQ4ODU0LCJleHAiOjE1ODA1MzUyNTR9.ujrDoDiDuBG8zLDySlaC4lIyshbe9LiQ9VsDibWDex8",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"profile"
+							]
+						},
+						"description": "This API returns details of a doctor like name,email,dob,gender,profilepic etc."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/checksubscription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc1NTI3OTYzLCJleHAiOjE1NzU1NDIzNjN9.zkbSVsJheiU_ThX-6DJTGFVCHNU88_MNxch1hBeZIDc"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/checksubscription",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"checksubscription"
+							]
+						},
+						"description": "This API returns wheather subscription of a doctor has expired or not."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/checkupdate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc0NzQ1MTExLCJleHAiOjE1NzQ3NTk1MTF9.2NjjcS4N9kFf3e7ao-Rj7grqwzUlv7jgD8B5y6uV770"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/checkupdate",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"checkupdate"
+							]
+						},
+						"description": "This API returns wheather an app version of the user is upto date or not."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/getCities",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "585eb7de-9a9d-46f2-b838-0a82e6e26c59",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc1OTY5OTcyLCJleHAiOjE1NzU5ODQzNzJ9.JhQEJbLqtNgA99QbLds4Y2CfVfEC5yG5a7j1aBQLcYI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/getCities",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"getCities"
+							]
+						},
+						"description": "This API returns list of cities associated with a particular doctor."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/getAreas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "12095d07-5bd3-421c-aee6-b009c198f911",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc1OTY5OTcyLCJleHAiOjE1NzU5ODQzNzJ9.JhQEJbLqtNgA99QbLds4Y2CfVfEC5yG5a7j1aBQLcYI"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"cityid\":5651\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/getAreas",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"getAreas"
+							]
+						},
+						"description": "This API returns list of areas associated with a particular city."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/registerdevice",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc1NTI3OTYzLCJleHAiOjE1NzU1NDIzNjN9.zkbSVsJheiU_ThX-6DJTGFVCHNU88_MNxch1hBeZIDc"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":2325,\n\t\"deviceid\":\"e1U7w3b7N8U:APA91bHXCgh1M8gOQjflZ9iXzMkgS5AME4ZVuISbrEzusYM\",\n\t\"imeinumber\":868158040689256\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/registerdevice",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"registerdevice"
+							]
+						},
+						"description": "This API registers/update FCM token for sending notification to the devices."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/updatedoctordetails",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc1MDA4Mjg3LCJleHAiOjE1NzUwMjI2ODd9.8YZSdaWQyB8Qy_5UOujpjdv36Ecou_PeBYSOloQ6KGg"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Maulin Shah\",\n\t\"mobile\":\"8200239602\",\n\t\"gender\":\"1\",\n\t\"headline\":\"This is my Headline\",\n\t\"about\":\"This is my About\",\n\t\"dob\":\"2019-05-11\",\n\t\"skypeid\":\"skypeid\",\n\t\"patcontactno\":\"\",\n\t\"speciality\":\"Sales\",\n\t\"superspeciality\":\"Psychologist\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/updatedoctordetails",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"updatedoctordetails"
+							]
+						},
+						"description": "This API updates the basic details of a doctor like name,dob,skypeid,specicality,contact no. etc."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/changepasswords",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc0ODUxODYyLCJleHAiOjE1NzQ4NjYyNjJ9.YVihNYHksWYopPBDPfgH66_4luku98j4bhACaqrta70",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\":\"123456\",\n\t\"newpassword\":\"12345678\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/changepasswords",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"changepasswords"
+							]
+						},
+						"description": "This API can be used to update the current password of the account of a doctor."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/changepasswordrequest",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"forgot_email\":\"maulin.shah@kivitech.in\"\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/changepasswordrequest",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"changepasswordrequest"
+							]
+						},
+						"description": "This API is used to generate change password request(forgot password). Upon success, user will receive a forgot password email on the their registered email id."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/patientlist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1c059984-b5ac-4c01-8b40-3595b0b46a89",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxMzI1MDc4LCJleHAiOjE1ODE0MTE0Nzh9.NAMhcN_hJirSLzummZi55u54AJYCMG3ZVq8WDJbRG60"
+							},
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678,\n\t\"lastSync\":114,\n\t\"page\":0\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/patientlist",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"patientlist"
+							]
+						},
+						"description": "This API returns the list of all patients under a particular doctor along with their details like name,email,phone,address,medical history,profile photo,city etc."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/appointmentslist",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "aa964c24-c6bd-49cf-b5d3-21545ce210ff",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxMzk3ODQxLCJleHAiOjE1ODE0ODQyNDF9.siC76cofMUkPz_r6QZ7pG19mhQ7brty4GhkNF9Eb6OQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678,\n\t\"lastSync\":0\n\t\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/appointmentlist",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"appointmentlist"
+							]
+						},
+						"description": "This API returns list of all appointments booked for a doctor of a particular clinic.\r\nIt returns details like start time,end time, patient id etc."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/patientdetails",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxMzI1MDc4LCJleHAiOjE1ODE0MTE0Nzh9.NAMhcN_hJirSLzummZi55u54AJYCMG3ZVq8WDJbRG60",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20204859,\n\t\"clinicid\":678\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/patientdetails",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"patientdetails"
+							]
+						},
+						"description": "This API returns all details of a patient like personal details, contact information , medical history , location information etc."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/patientgroups",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc5Njk5MDk1LCJleHAiOjE1Nzk3ODU0OTV9.v6aWXO4d7kX9xwejsuWhoScawkLBlP0QQ6ZmmEQgITE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20038244,\n\t\"clinicid\":375\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/patientgroups",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"patientgroups"
+							]
+						},
+						"description": "This API returns name,type of all groups of a patient in the table doctorgroups. "
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/patientfiles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNDgzMjA4LCJleHAiOjE1ODE1Njk2MDh9.nWQhw5BtiVOj1M2vIIjjUbJxggxCXFqtoN5nA7vwZmQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20203448,\n\t\"clinicid\":678\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/patientfiles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"patientfiles"
+							]
+						},
+						"description": "This API returns list of all files along with their details associated with a particular patient."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/patienttreatmentplans",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNTcyMjk3LCJleHAiOjE1ODE2NTg2OTd9.Jh1YdLcRtvT5pJ1NMO5xLIj6qm_fxebapnLcEWN38rE",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20203448,\n\t\"clinicid\":678,\n\t\"page\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/patienttreatmentplans",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"patienttreatmentplans"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						},
+						"description": "This API returns list of all Treatment Plans details associated with a patient."
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/patientprescriptions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNTcyMjk3LCJleHAiOjE1ODE2NTg2OTd9.Jh1YdLcRtvT5pJ1NMO5xLIj6qm_fxebapnLcEWN38rE",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20203448,\n\t\"clinicid\":678,\n\t\"page\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/patientprescriptions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"patientprescriptions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/patientappointments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNDgzMjA4LCJleHAiOjE1ODE1Njk2MDh9.nWQhw5BtiVOj1M2vIIjjUbJxggxCXFqtoN5nA7vwZmQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20203448,\n\t\"clinicid\":678,\n\t\"page\":0\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/patientappointments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"patientappointments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/patientprogressnotes",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNTAxMTY1LCJleHAiOjE1ODE1ODc1NjV9.WsmGAoC0oq_n4rqHdWeHWMrCA8tPo7vFX5jEmT3u7XE",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20052979,\n\t\"clinicid\":678,\n\t\"page\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/patientprogressnotes",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"patientprogressnotes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/treatmentproceduresgroup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgwOTA3OTYwLCJleHAiOjE1ODA5OTQzNjB9.7IJdpNJ8M-5pWDjizjKWa4V0NSsNXSVr3omsRi3XcOY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":1723,\n\t\"lastsync\":0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/treatmentproceduresgroup",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"treatmentproceduresgroup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/treatmentprocedure",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgwOTY2MzI5LCJleHAiOjE1ODEwNTI3Mjl9.GdGAiyKv7tnxJ6xAp8qVbjAOy_mBxaZgweQ9k5iWFvw",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678,\n\t\"lastsync\":1517896017\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/treatmentprocedures",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"treatmentprocedures"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/treatmentinstructions",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgwOTY2MzI5LCJleHAiOjE1ODEwNTI3Mjl9.GdGAiyKv7tnxJ6xAp8qVbjAOy_mBxaZgweQ9k5iWFvw",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"procedureid\":10524\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/treatmentinstructions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"treatmentinstructions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/getinventoryitems",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgwOTgwNTYwLCJleHAiOjE1ODEwNjY5NjB9.s_H0s-2hMvQRZ5xW-VOdiOikGR-zdWANH3iL2xrCZTU",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":1405\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/getinventoryitems",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"getinventoryitems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/saveprogressnote",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxMDY1ODQwLCJleHAiOjE1ODExNTIyNDB9.LlG7Oa1gl49IaxkRnwLHxFx9ki5VDZPN3REGAPwgxvs",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":993,\n\t\"patientid\":20951115,\n\t\"progressnotedetail\":\n\t{\n\t\t\"progressnoteid\":\"0\",\n    \t\"consultantid\":\"0\",\n    \t\"progressnote\":\"ggg\"\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/saveprogressnote",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"saveprogressnote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/updatehealthstate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxMDY1ODQwLCJleHAiOjE1ODExNTIyNDB9.LlG7Oa1gl49IaxkRnwLHxFx9ki5VDZPN3REGAPwgxvs",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20660116,\n\t\"clinicid\":678,\n\t\"healthstateid\":22\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/updatehealthstate",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"updatehealthstate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/handwritings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNDgzMjA4LCJleHAiOjE1ODE1Njk2MDh9.nWQhw5BtiVOj1M2vIIjjUbJxggxCXFqtoN5nA7vwZmQ",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678,\n\t\"patientid\":20203448\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/gethandwritings",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"gethandwritings"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/doctorapi/addrequestedpayments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNjU2OTg1LCJleHAiOjE1ODE3NDMzODV9.XeUMm4NVggDcxvinGhvXX7wThiyR-nnJ78VIADl_OnI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678,\n\t\"patientid\":20203448,\n\t\"requestviasms\":1,\n\t\"requestviaemail\":1,\n\t\"takeconveniencefees\":1,\n\t\"amount\":500,\n\t\"plans\":[71204,319667]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/doctorapi/addrequestedpayments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"doctorapi",
+								"addrequestedpayments"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "This sub collection contains all APIs related to a Doctor.\nRoute for these APIs will be api/doctorapi/",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Clinic",
+			"item": [
+				{
+					"name": "api/clinicapi/getConsultants",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc0NzYxMjE0LCJleHAiOjE1NzQ3NzU2MTR9.rjrBSNqvRLR9VeD8zkTqB4VPvMWv217rww9DCuyur7Y",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":29\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/clinicapi/getConsultants",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"clinicapi",
+								"getConsultants"
+							]
+						},
+						"description": "This API returns list of all consultants under a particular clinic."
+					},
+					"response": []
+				},
+				{
+					"name": "api/clinicapi/getClinics",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"warning": "Value contains invalid newline characters.",
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc0NzYxMjE0LCJleHAiOjE1NzQ3NzU2MTR9.rjrBSNqvRLR9VeD8zkTqB4VPvMWv217rww9DCuyur7Y",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/api/clinicapi/getClinics",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"clinicapi",
+								"getClinics"
+							]
+						},
+						"description": "This API returns list of all clinics under a particular doctor."
+					},
+					"response": []
+				},
+				{
+					"name": "api/clinicapi/clinicdetails",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOwiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc1OTc0MTI5LCJleHAiOjE1NzU5ODg1Mjl9.BZsSNeuD_umGq5SbrSC8BdBWlqJJU1SIqd6Z_m2pVqs"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/clinicapi/clinicdetails",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"clinicapi",
+								"clinicdetails"
+							]
+						},
+						"description": "This API returns details of a clinic like name,email,contact, address, areas,ownersettings,clinicsettings etc."
+					},
+					"response": []
+				},
+				{
+					"name": "api/clinicapi/getclinicfindings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNTkyODY0LCJleHAiOjE1ODE2NzkyNjR9.i0S81T2-RUeBqu6aZTouWXiQE4WJXi2Yh7nqq8TXhWE",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678,\n\t\"lastsync\":1533556112\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/clinicapi/getclinicfindings",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"clinicapi",
+								"getclinicfindings"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "api/patientapi/invoices",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "da495df7-4790-41ca-b0e1-7b40650afe66",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgwOTA3OTYwLCJleHAiOjE1ODA5OTQzNjB9.7IJdpNJ8M-5pWDjizjKWa4V0NSsNXSVr3omsRi3XcOY",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":21020643,\n\t\"clinicid\":678\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/patientapi/invoices",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patientapi",
+								"invoices"
+							]
+						},
+						"description": "This API returns list of all invoices of a patient associated with the doctor with details like invoice number,amount,discount,gst amount,notes,category,invoice dated etc."
+					},
+					"response": []
+				},
+				{
+					"name": "api/patientapi/receipts",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTc2MDU2NTAyLCJleHAiOjE1NzYwNzA5MDJ9.pNhYEGOEt5BJDz1IcJfIO7aJjGfkG3phwpjZ6wvOXfI",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20989924\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/api/patientapi/receipts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patientapi",
+								"receipts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api/patientapi/getduescredit",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkb2N0b3JpZCI6MzIwMywiaWF0IjoxNTgxNjU2OTg1LCJleHAiOjE1ODE3NDMzODV9.XeUMm4NVggDcxvinGhvXX7wThiyR-nnJ78VIADl_OnI"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678,\n\t\"patientid\":20579302,\n\t\"dues\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/patientapi/getduescredit",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"patientapi",
+								"getduescredit"
+							]
+						},
+						"description": "Response:\n{\n    \"status\": 1,\n    \"statusCode\": 200,\n    \"statusText\": \"HTTP 200 OK success\",\n    \"message\": \"Result Found\",\n    \"result\": {\n        \"patient\": 20579302,\n        \"clinic\": 678,\n        \"dues\": {\n            \"TotalPayment\": 40000,\n            \"PaymentReceived\": 40000,\n            \"PaymentDue\": 0,\n            \"tobeclaimed\": 0,\n            \"InvoicesWritten\": 1\n        },\n        \"credits\": {\n            \"credits\": 0\n        }\n    }\n}"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "PatientApp",
+			"item": [
+				{
+					"name": "patient/authenticate",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"email\":\"maulin123.shah@kivitech.in\",\n   \"password\":\"7c222fb2927d828af22f592134e8932480637c0d\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/authenticate",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"authenticate"
+							]
+						},
+						"description": "This API is used to login into the account of a patient, it will return an access_token which must be bind to every future requests."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/clinicdetails",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzcwODI5NzEsImV4cCI6MTU3NzA5NzM3MX0.7nPMF1Vyarvahx1TktnaZ7HSLhEt63SbPGvudeoTDsM",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/patient/clinicdetails",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"clinicdetails"
+							]
+						},
+						"description": "This API returns details of a particular clinic like name,email,contact,consultant list,timings,area,city etc."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/clinicslots",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwOTkxMzMxLCJpYXQiOjE1NzY1NzQ4NjMsImV4cCI6MTU3NjU4OTI2M30.-DAS2d8WGnDnwK-oqlIsGea9L4ZpMGJYNMnji_BZyN0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":678,\n\t\"date\":\"2018-04-04\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/clinicslots",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"clinicslots"
+							]
+						},
+						"description": "This API returns all slots for a particular clinic for a particular date alongs with status of slot whether it is booked or not."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/bookappointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzcwOTI0ODgsImV4cCI6MTU3NzEwNjg4OH0.vrHPwoH0x1iBanlUeUQblCK0_TRaC2V_nzBIBWA0irE",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"clinicid\": \"971\",\r\n\"date\": \"2019-12-23\",\r\n\"doctorid\": \"4086\",\r\n\"isteleappoint\": 0,\r\n\"patientemail\": \"maulin123.shah@kivitech.in\",\r\n\"patientmobile\": \"9814181928\",\r\n\"patientname\": \"Maulin\",\r\n\"reason\": \"test\",\r\n\"slot\": \"12:15:00\"\r\n}"
+						},
+						"url": {
+							"raw": "localhost:3000/patient/bookappointment",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"bookappointment"
+							]
+						},
+						"description": "This API is used to book an appointment along with patient details, slot,which doctor and clinic to book appointment for."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/prescription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwOTkwMTAwLCJpYXQiOjE1NzY3NDgyMDgsImV4cCI6MTU3Njc2MjYwOH0.b0Pil_0quV9LtnGvFtTxcODoRgtYmczwc4Mc5I2_udU",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/patient/prescription",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"prescription"
+							]
+						},
+						"description": "This Api returns list of all prescriptions of a patient along with medicince and diagnosis details."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/treatmentplans",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzY2NzEzODcsImV4cCI6MTU3NjY4NTc4N30.prIzsXHSASddLbEz9lNO9IgHBiOGO7wQshV1kVUzdV0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/patient/treatmentplans",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"treatmentplans"
+							]
+						},
+						"description": "This API returns list of all the treatmentplans going for a patient."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/patientfiles",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwOTkwMTAwLCJpYXQiOjE1NzY3MzcwOTIsImV4cCI6MTU3Njc1MTQ5Mn0.gdxmy12FaAcvlN11gmKr8q-5KDWkAOED_bltioIEtrU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/patient/patientfiles",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"patientfiles"
+							]
+						},
+						"description": "This API returns list of all files of a patient like prescription, uploaded files etc."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/preauth",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kiviroot",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "kproduction",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":\"Clsxx/eZPl8M0chJEozgZg==\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/preauth",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"preauth"
+							]
+						},
+						"description": "This API is used for preauthorization of users using a link send to patient. On clicking this link patient can log in directly without credentials."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/setpassword",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kiviroot",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "kproduction",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"patientid\":20990100,\n\t\"password\":\"7c222fb2927d828af22f592134e8932480637c0d\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/setpassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"setpassword"
+							]
+						},
+						"description": "This API sets password for a patient account after preauthorization of the user. Emai, password and patientid is required for this API."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/getmyappointments",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzcxNjczMTN9.gAtTrvesG57KQe0b7h_ECrTC4HOnQ-j5GDicdfvq9no"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/patient/getmyappointments",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"getmyappointments"
+							]
+						},
+						"description": "This API returns the list of all appointments booked by a patient along with apointments details."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/editprofile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzY4Mzg4MTYsImV4cCI6MTU3Njg1MzIxNn0.0ccAvEStF1TwEasvBxywE0wKbVRTuPlGig9S4ZMreZY"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"fname\":\"Maulin\",\n\t\"mname\":\"test\",\n\t\"dob\":\"1993-02-23\",\n\t\"contactno\":\"9814181928\",\n\t\"landline\":\"\",\n\t\"address\":\"testing\",\n\t\"lname\":\"Shah\",\n\t\"sex\":1,\n\t\"city\":2,\n\t\"area\":1,\n\t\"bloodgroup\":\"AB+\",\n\t\"otherhistory\":\"\",\n\t\"medicalhistory\":[2699,2700]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/editprofile",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"editprofile"
+							]
+						},
+						"description": "This API is used to update profile details of a patient like first name,contactno,address etc."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/getallcities",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzY4MTkyNzksImV4cCI6MTU3NjgzMzY3OX0.1HLNJbNy756FrbT1HiZt7j2N8rh-aNmuC_nbe5qUg0k",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":971\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/getallcities",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"getallcities"
+							]
+						},
+						"description": "This API returns list of cities associated with a particular clinic."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/getallareas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzY4MzI0MDMsImV4cCI6MTU3Njg0NjgwM30.g7M5lv-mAug-2mi-bHRWRiiGNrR3oCIMwg48SP_lKH0"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":971,\n\t\"cityid\":4619\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/getallareas",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"getallareas"
+							]
+						},
+						"description": "This API returns list of areas associated with a particular city."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/getallsymptoms",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzY4MzI0MDMsImV4cCI6MTU3Njg0NjgwM30.g7M5lv-mAug-2mi-bHRWRiiGNrR3oCIMwg48SP_lKH0"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"clinicid\":971\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/getallsymptoms",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"getallsymptoms"
+							]
+						},
+						"description": "This API returns list of all symptoms associated with a clinic."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/patientauthviacode",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "kiviroot",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "kproduction",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"referralcode\":\"S5a1y\",\n\t\"contactno\":\"9814181928\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/patientauthviacode",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"patientauthviacode"
+							]
+						},
+						"description": "This API is used to authenticate a patient using a preauth code, a referral code is attached in the request."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/updatepatientfirebaseid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwOTkxMzMxLCJpYXQiOjE1NzY5MjE5ODMsImV4cCI6MTU3NjkzNjM4M30.ieL-D6C7B_NQb2P5iBzWEsS2GZnblcZrwxX6xY7g0VE"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"firebaseid\":\"12222dffwfefew\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/updatepatientfirebaseid",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"updatepatientfirebaseid"
+							]
+						},
+						"description": "This API updates firebase ID and user device ID in the patient table."
+					},
+					"response": []
+				},
+				{
+					"name": "patient/changepassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXRpZW50aWQiOjIwMjA0ODU5LCJpYXQiOjE1NzcxMDgxMDZ9.9NHqmXkI-4q-a8fMONn9LML5AgXknPc97jpkM6OBTI4"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"password\":\"7c222fb2927d828af22f592134e8932480637c0d\",\n\t\"newpassword\":\"7c4a8d09ca3762af61e59520943dc26494f8941b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/patient/changepassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patient",
+								"changepassword"
+							]
+						},
+						"description": "This API is used to change password of a user account."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "localhost:3000/healthcheck",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/healthcheck",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"healthcheck"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
