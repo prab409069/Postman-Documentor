@@ -26,6 +26,8 @@ npm install
     var documentor=require("postman-documentor");
     let filepath="collection.json";
     documentor(filepath);
+
+    Output will be generated in folder output with file name as documentation.pdf.
 ```
 
 ## Run tests
