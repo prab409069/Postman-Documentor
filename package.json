@@ -17,7 +17,7 @@
   "author": "Prabhjot Singh",
   "license": "ISC",
   "dependencies": {
-    "html-pdf": "^2.2.0",
+    "html-pdf": "^3.0.1",
     "readme-md-generator": "^1.0.0"
   },
   "repository": {
